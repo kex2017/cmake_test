@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xuke/my_test/test_sscanf/CMakeFiles /home/xuke/my_test/test_sscanf/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/xuke/my_test/test_sscanf && $(CMAKE_COMMAND) -E cmake_progress_start /home/xuke/my_test/test_sscanf/CMakeFiles /home/xuke/my_test/test_sscanf/test/CMakeFiles/progress.marks
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f CMakeFiles/Makefile2 test/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xuke/my_test/test_sscanf/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,71 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/xuke/my_test/test_sscanf && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named main
+# Convenience name for target.
+test/CMakeFiles/test_sscanf.dir/rule:
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test_sscanf.dir/rule
+.PHONY : test/CMakeFiles/test_sscanf.dir/rule
 
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+# Convenience name for target.
+test_sscanf: test/CMakeFiles/test_sscanf.dir/rule
 
-# fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named test_sscanf
-
-# Build rule for target.
-test_sscanf: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_sscanf
 .PHONY : test_sscanf
 
 # fast build rule for target.
 test_sscanf/fast:
-	$(MAKE) -f test/CMakeFiles/test_sscanf.dir/build.make test/CMakeFiles/test_sscanf.dir/build
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f test/CMakeFiles/test_sscanf.dir/build.make test/CMakeFiles/test_sscanf.dir/build
 .PHONY : test_sscanf/fast
 
-main.o: main.c.o
+test_sscanf.o: test_sscanf.c.o
 
-.PHONY : main.o
+.PHONY : test_sscanf.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.o
-.PHONY : main.c.o
+test_sscanf.c.o:
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f test/CMakeFiles/test_sscanf.dir/build.make test/CMakeFiles/test_sscanf.dir/test_sscanf.c.o
+.PHONY : test_sscanf.c.o
 
-main.i: main.c.i
+test_sscanf.i: test_sscanf.c.i
 
-.PHONY : main.i
+.PHONY : test_sscanf.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.i
-.PHONY : main.c.i
+test_sscanf.c.i:
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f test/CMakeFiles/test_sscanf.dir/build.make test/CMakeFiles/test_sscanf.dir/test_sscanf.c.i
+.PHONY : test_sscanf.c.i
 
-main.s: main.c.s
+test_sscanf.s: test_sscanf.c.s
 
-.PHONY : main.s
+.PHONY : test_sscanf.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
-.PHONY : main.c.s
+test_sscanf.c.s:
+	cd /home/xuke/my_test/test_sscanf && $(MAKE) -f test/CMakeFiles/test_sscanf.dir/build.make test/CMakeFiles/test_sscanf.dir/test_sscanf.c.s
+.PHONY : test_sscanf.c.s
 
 # Help Target
 help:
@@ -170,12 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
-	@echo "... edit_cache"
 	@echo "... test_sscanf"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... edit_cache"
+	@echo "... test_sscanf.o"
+	@echo "... test_sscanf.i"
+	@echo "... test_sscanf.s"
 .PHONY : help
 
 
@@ -187,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/xuke/my_test/test_sscanf && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

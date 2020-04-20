@@ -1,14 +1,22 @@
 #include <stdio.h>
 
-void test_sscanf(void)
-{
-    char str[10];
+static char g_str[10] = {0};
 
+void init_test_str(void)
+{
     for (int i = 0; i < 10; i++)
     {
-        str[i] = '!';
+        g_str[i] = '!';
     }
-
-    sscanf("9999999999", "%s", str);
-    printf("str is %s\r\n", str);
 }
+
+void show_test_str(void)
+{
+    printf("g_str is %s\r\n", g_str);
+}
+
+void sscanf_test1(void)
+{
+    sscanf("9999999999", "%s", g_str);
+}
+

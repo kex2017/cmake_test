@@ -3,5 +3,9 @@
 
 void main(void)
 {
-    test_sscanf();
+    init_test_str();
+
+    sscanf_test1();
+
+    show_test_str();
 }
